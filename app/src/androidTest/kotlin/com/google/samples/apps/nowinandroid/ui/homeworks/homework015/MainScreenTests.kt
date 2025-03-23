@@ -42,7 +42,7 @@ class MainScreenTest: TestCase(Builder.withComposeSupport()) {
             step("Verify Top Navigation Bar Settings Icon") {
                 mainScreen.settingsIcon.perform {
                     assertIsDisplayed()
-                    assertContentDescriptionEquals("Settings")
+                    assertTextContains("Settings")
 //                    performClick()
                 }
             }
