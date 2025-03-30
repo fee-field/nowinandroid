@@ -140,6 +140,7 @@ dependencies {
     androidTestImplementation("com.kaspersky.android-components:kaspresso:1.6.0") {
         exclude(module = "protobuf-lite")
     }
+    androidTestImplementation("io.github.kakaocup:compose:0.4.5")
 }
 
 baselineProfile {

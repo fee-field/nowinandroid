@@ -25,4 +25,14 @@ object C {
     const val SEARCH_TEXT_FIELD = "searchTextField"
     const val INTERESTS_ITEM_HEADER = "For You Interests Item Header"
     const val DONE_BUTTON = "Done Button"
+    const val TOPIC_ICON = "selected topic icon"
+    const val TOPIC_TEXT = "selected topic text"
+    const val TOPIC_UNCHECK = "selected topic uncheck"
+    const val TOPIC_CHECKED = "selected topic checked"
+    const val FEED_ICON = "feed icon"
+    const val FEED_TITLE = "feed title"
+    const val FEED_DATE = "feed date"
+    const val FEED_DESCRIPTION = "feed descr"
+    const val FEED_BOOKMARK = "feed bookmark button"
+
 }

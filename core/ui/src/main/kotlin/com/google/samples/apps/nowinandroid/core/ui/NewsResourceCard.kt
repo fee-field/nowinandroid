@@ -66,10 +66,12 @@ import androidx.compose.ui.tooling.preview.PreviewParameter
 import androidx.compose.ui.unit.dp
 import coil.compose.AsyncImagePainter
 import coil.compose.rememberAsyncImagePainter
+import com.google.samples.apps.nowinandroid.core.designsystem.C
 import com.google.samples.apps.nowinandroid.core.designsystem.R.drawable
 import com.google.samples.apps.nowinandroid.core.designsystem.component.NiaIconToggleButton
 import com.google.samples.apps.nowinandroid.core.designsystem.component.NiaTopicTag
 import com.google.samples.apps.nowinandroid.core.designsystem.icon.NiaIcons
+import com.google.samples.apps.nowinandroid.core.designsystem.lazyListLength
 import com.google.samples.apps.nowinandroid.core.designsystem.theme.NiaTheme
 import com.google.samples.apps.nowinandroid.core.model.data.FollowableTopic
 import com.google.samples.apps.nowinandroid.core.model.data.NewsResource
@@ -138,6 +140,7 @@ fun NewsResourceCardExpanded(
                             userNewsResource.title,
                             modifier = Modifier
                                 .fillMaxWidth((.8f))
+                                .testTag(C.FEED_TITLE)
                                 .dragAndDropSource { _ ->
                                     DragAndDropTransferData(
                                         ClipData.newPlainText(
@@ -244,6 +247,7 @@ fun BookmarkButton(
             Icon(
                 imageVector = NiaIcons.BookmarkBorder,
                 contentDescription = stringResource(R.string.core_ui_bookmark),
+                modifier = Modifier.testTag(C.FEED_BOOKMARK)
             )
         },
         checkedIcon = {
@@ -312,7 +316,9 @@ fun NewsResourceTopics(
     Row(
         // causes narrow chips
         modifier = modifier.horizontalScroll(rememberScrollState()),
+//        modifier = modifier.semantics { lazyListLength = topics.size },
         horizontalArrangement = Arrangement.spacedBy(4.dp),
+
     ) {
         for (followableTopic in topics) {
             NiaTopicTag(
