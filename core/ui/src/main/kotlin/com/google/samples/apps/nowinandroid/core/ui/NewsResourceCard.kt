@@ -195,7 +195,8 @@ fun NewsResourceHeaderImage(
     Box(
         modifier = Modifier
             .fillMaxWidth()
-            .height(180.dp),
+            .height(180.dp)
+            .testTag(C.FEED_ICON),
         contentAlignment = Alignment.Center,
     ) {
         if (isLoading) {
@@ -247,7 +248,7 @@ fun BookmarkButton(
             Icon(
                 imageVector = NiaIcons.BookmarkBorder,
                 contentDescription = stringResource(R.string.core_ui_bookmark),
-                modifier = Modifier.testTag(C.FEED_BOOKMARK)
+                modifier = Modifier.testTag(C.FEED_BOOKMARK),
             )
         },
         checkedIcon = {
@@ -297,6 +298,7 @@ fun NewsResourceMetaData(
             formattedDate
         },
         style = MaterialTheme.typography.labelSmall,
+        modifier = Modifier.testTag(C.FEED_DATE),
     )
 }
 
@@ -304,7 +306,10 @@ fun NewsResourceMetaData(
 fun NewsResourceShortDescription(
     newsResourceShortDescription: String,
 ) {
-    Text(newsResourceShortDescription, style = MaterialTheme.typography.bodyLarge)
+    Text(
+        newsResourceShortDescription, style = MaterialTheme.typography.bodyLarge,
+        modifier = Modifier.testTag(C.FEED_DESCRIPTION),
+    )
 }
 
 @Composable
@@ -319,7 +324,7 @@ fun NewsResourceTopics(
 //        modifier = modifier.semantics { lazyListLength = topics.size },
         horizontalArrangement = Arrangement.spacedBy(4.dp),
 
-    ) {
+        ) {
         for (followableTopic in topics) {
             NiaTopicTag(
                 followed = followableTopic.isFollowed,
