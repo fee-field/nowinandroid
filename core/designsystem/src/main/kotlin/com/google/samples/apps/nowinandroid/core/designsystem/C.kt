@@ -34,5 +34,8 @@ object C {
     const val FEED_DATE = "feed date"
     const val FEED_DESCRIPTION = "feed descr"
     const val FEED_BOOKMARK = "feed bookmark button"
-
+    const val TOPIC_TOGGLE = "toggle button"
+    const val HEADER_TITLE = "Lazy List header"
+    const val METADATA = "MetaData"
+    const val LAZY_LIST_ITEM_CONTENT = "NewsResourceShortDescription"
 }
